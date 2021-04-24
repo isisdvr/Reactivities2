@@ -9,20 +9,18 @@ interface Props {
   activity: Activity;
 }
 export default function ActivityListItem({ activity }: Props) {
- 
   return (
     <Segment.Group>
       <Segment>
         <Item.Group>
           <Item>
             <Item.Image size="tiny" circular src="/assets/user.png" />
-              <Item.Content>
-                <Item.Header as={Link} to={`/activities/${activity.id}`}>
-                  {activity.title}
-                </Item.Header>
-                <Item.Description>Hosted by Bob</Item.Description>
-              </Item.Content>
-          
+            <Item.Content>
+              <Item.Header as={Link} to={`/activities/${activity.id}`}>
+                {activity.title}
+              </Item.Header>
+              <Item.Description>Hosted by Bob</Item.Description>
+            </Item.Content>
           </Item>
         </Item.Group>
       </Segment>
@@ -30,7 +28,7 @@ export default function ActivityListItem({ activity }: Props) {
       <Segment>
         <span>
           <Icon name="clock" />
-          {format(activity.date!, 'dd MMM yyyy h:mm aa')}
+          {format(activity.date!, "dd MMM yyyy h:mm aa")}
           <Icon name="marker" /> {activity.venue}
         </span>
       </Segment>
